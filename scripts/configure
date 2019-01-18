@@ -10,7 +10,7 @@ apt-get install -y python-pip python-dev build-essential
 pip install --upgrade pip
 
 # install lib*-dev requirements
-apt-get install -y util-linux libacl1-dev libselinux1-dev
+apt-get install -y util-linux libacl1-dev libselinux1-dev gcc make libseccomp-dev libcap-dev libcap-ng-utils golang
 
 git clone https://github.com/luan/vimfiles.git ~/vimfiles
 pushd ~/vimfiles
