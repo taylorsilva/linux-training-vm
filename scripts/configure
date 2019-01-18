@@ -1,17 +1,37 @@
 #!/bin/bash
 set -ex
+
+add-apt-repository ppa:neovim-ppa/unstable
 apt-get update
 
-# install dev stuff
-apt-get install -y neovim golang git
+apt-get install -y \
+         \
+        neovim \
+        golang \
+        git \
+        tldr \
+        python-dev \
+        python-pip \
+        python3-dev \
+        python3-pip \
+        build-essential \
+         \
+        gcc \
+        libacl1-dev \
+        libcap-dev \
+        libcap-ng-utils \
+        libseccomp-dev \
+        libselinux1-dev \
+        make \
+        util-linux
 
-# install python junk for vimfiles
-apt-get install -y python-pip python-dev build-essential
 pip install --upgrade pip
+pip3 install --upgrade pip
 
-# install lib*-dev requirements
-apt-get install -y util-linux libacl1-dev libselinux1-dev gcc make libseccomp-dev libcap-dev libcap-ng-utils golang
+pip install neovim
+pip3 install neovim
 
+#curl vimfiles.luan.sh/install | bash
 git clone https://github.com/luan/vimfiles.git ~/vimfiles
 pushd ~/vimfiles
   ./bin/install --non-interactive
