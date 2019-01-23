@@ -25,10 +25,7 @@ apt-get install -y \
         make \
         util-linux
 
-pip install --upgrade pip
-pip3 install --upgrade pip
-
-pip install neovim
+pip3 --version
 pip3 install neovim
 
 #curl vimfiles.luan.sh/install | bash
