@@ -36,6 +36,44 @@ if [ ! -d "/home/vagrant/vimfiles" ] ; then
   popd
 fi
 
-export GOPATH=/workspace/go/
+# Make GRUB pause during the boot, to give a chance to select custom boot configuration
 sed -i 's/GRUB_TIMEOUT=0/GRUB_TIMEOUT=10/g' /etc/default/grub
 
+
+if grep -e GOPATH /home/vagrant/.profile; then
+
+  echo ".profile is already appended with user configuration"
+
+else
+  echo "Appending user configuration to .profile"
+
+  cat <<-EOF >> /home/vagrant/.profile
+
+# set user aliases
+
+alias vi=nvim
+EOF
+
+fi
+
+if grep -e GOPATH /home/vagrant/.bashrc; then
+
+  echo ".bashrc is already appended with user configuration"
+
+else
+  echo "Appending user configuration to .bashrc"
+
+  cat <<-EOF >> /home/vagrant/.bashrc
+
+# set GOPATH
+
+export GOPATH=/home/vagrant/workspace/go/
+
+# set default editor
+
+export EDITOR="$(which nvim)"
+EOF
+
+  mkdir /home/vagrant/workspace/go/
+
+fi
