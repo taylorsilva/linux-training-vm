@@ -29,10 +29,12 @@ pip3 --version
 pip3 install neovim
 
 #curl vimfiles.luan.sh/install | bash
-git clone https://github.com/luan/vimfiles.git ~/vimfiles
-pushd ~/vimfiles
-  ./bin/install --non-interactive
-popd
+if [ ! -d "/home/vagrant/vimfiles" ] ; then
+  git clone https://github.com/luan/vimfiles.git /home/vagrant/vimfiles
+  pushd /home/vagrant/vimfiles
+    ./bin/install --non-interactive
+  popd
+fi
 
 export GOPATH=/workspace/go/
 sed -i 's/GRUB_TIMEOUT=0/GRUB_TIMEOUT=10/g' /etc/default/grub
