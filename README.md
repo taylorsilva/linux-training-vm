@@ -14,6 +14,7 @@ This project helps to create Linux VM for [System Programming for Linux Containe
   `brew cask install virtualbox`
 - Install [Vagrant](https://www.vagrantup.com/intro/index.html)
   `brew cask install vagrant`
+  `vagrant plugin install vagrant-disksize`
 - Run
   `make vm`
 - SSH onto machine
