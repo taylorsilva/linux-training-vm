@@ -24,6 +24,8 @@ apt-get install -y \
         libselinux1-dev \
         flex \
         bison \
+        libssl-dev \
+        libelf-dev \
         make \
         util-linux
 
@@ -76,6 +78,6 @@ export GOPATH=/home/vagrant/workspace/go/
 export EDITOR="$(which nvim)"
 EOF
 
-  mkdir /home/vagrant/workspace/go/
+  mkdir -p /home/vagrant/workspace/go/
 
 fi
