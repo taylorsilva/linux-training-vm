@@ -77,8 +77,8 @@ export GOPATH=/home/vagrant/workspace/go/
 
 export EDITOR="$(which nvim)"
 
-HISTSIZE=-1
-HISTFILESIZE=-1
+HISTSIZE=
+HISTFILESIZE=
 EOF
 
   mkdir -p /home/vagrant/workspace/go/
