@@ -42,7 +42,7 @@ fi
 
 # Make GRUB pause during the boot, to give a chance to select custom boot configuration
 sed -i 's/GRUB_TIMEOUT=0/GRUB_TIMEOUT=10/g' /etc/default/grub
-
+update-grub
 
 if grep -e GOPATH /home/vagrant/.profile; then
 
@@ -76,6 +76,9 @@ export GOPATH=/home/vagrant/workspace/go/
 # set default editor
 
 export EDITOR="$(which nvim)"
+
+HISTSIZE=-1
+HISTFILESIZE=-1
 EOF
 
   mkdir -p /home/vagrant/workspace/go/
