@@ -19,6 +19,7 @@ This project helps to create Linux VM for [System Programming for Linux Containe
   `make vm`
 - SSH onto machine
   `make ssh`
-- Relaod VM with VirtualBox gui to get GRUB.
-  Once "VirtualBox" logo appears, click the gui and hold shift (VM capturing must be enabled)
+- Reload VM with VirtualBox gui to get GRUB.
   `make get-grub`
+  Note: Once "VirtualBox" logo appears, click the gui and hold shift
+  to get GRUB (VM capturing must be enabled).
