@@ -18,4 +18,8 @@ This project helps to create Linux VM for [System Programming for Linux Containe
 - Run
   `make vm`
 - SSH onto machine
-  `vagrant ssh`
+  `make ssh`
+- Reload VM with VirtualBox gui to get GRUB.
+  `make get-grub`
+  Note: Once "VirtualBox" logo appears, click the gui and hold shift
+  to get GRUB (VM capturing must be enabled).
