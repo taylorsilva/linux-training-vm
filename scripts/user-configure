@@ -1,12 +1,17 @@
 #!/bin/bash
 set -ex
 
-# curl vimfiles.luan.sh/install | bash
-if [[ ! -d ${HOME}/vimfiles ]] ; then
-  git clone https://github.com/luan/vimfiles.git "${HOME}/vimfiles"
-  pushd "${HOME}/vimfiles"
-    # ./install
+if [[ ! -d ${HOME}/.dotfiles ]] ; then
+  git clone https://github.com/taylorsilva/dotfiles.git "${HOME}/.dotfiles"
+  pushd "${HOME}/.dotfiles"
+    # git submodule update --init
+    rm "${HOME}/.bashrc" "${HOME}/.profile"
+    stow bash neovim git
   popd
+  git clone --depth=1 https://github.com/Bash-it/bash-it.git "${HOME}/.bash_it"
+  ~/.bash_it/install.sh --no-modify-config
+
+  mkdir -p "${HOME}/go"
 fi
 
 if [[ ! -d ${HOME}/tmuxfiles ]]; then
@@ -14,45 +19,4 @@ if [[ ! -d ${HOME}/tmuxfiles ]]; then
   pushd "${HOME}/tmuxfiles"
     ./install
   popd
-fi
-
-if grep -e GOPATH "${HOME}/.profile"; then
-
-  echo ".profile is already appended with user configuration"
-
-else
-  echo "Appending user configuration to .profile"
-
-  cat <<-EOF >> "${HOME}/.profile"
-
-# set user aliases
-
-alias vi=nvim
-EOF
-
-fi
-
-if grep -e GOPATH "${HOME}/.bashrc"; then
-
-  echo ".bashrc is already appended with user configuration"
-
-else
-  echo "Appending user configuration to .bashrc"
-
-  cat <<-EOF >> "${HOME}/.bashrc"
-
-# set GOPATH
-
-export GOPATH=${HOME}/workspace/go
-
-# set default editor
-
-export EDITOR=$(which nvim)
-
-HISTSIZE=
-HISTFILESIZE=
-EOF
-
-  mkdir -p "${HOME}/workspace/go"
-
 fi
