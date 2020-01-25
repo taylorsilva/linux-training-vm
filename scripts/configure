@@ -23,6 +23,8 @@ apt install -y \
   libssl-dev \
   make \
   neovim \
+  python-neovim \
+  python3-neovim \
   python-dev \
   python-pip \
   python3-dev \
