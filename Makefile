@@ -4,7 +4,7 @@ up:
 	vagrant up
 
 down:
-	vagrant suspend
+	vagrant halt
 
 vm:
 	vagrant destroy -f && vagrant up
