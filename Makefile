@@ -1,5 +1,11 @@
 .PHONY: vm
 
+up:
+	vagrant up
+
+down:
+	vagrant suspend
+
 vm:
 	vagrant destroy -f && vagrant up
 
