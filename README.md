@@ -12,9 +12,9 @@ This project helps to create Linux VM for [System Programming for Linux Containe
 - Checkout repo on your local machine
 - Install [VirtualBox](https://www.virtualbox.org/)
   NOTE: This setup works with virtual box 6.0.14
-  `brew cask install virtualbox`
+  `brew install --cask virtualbox`
 - Install [Vagrant](https://www.vagrantup.com/intro/index.html)
-  `brew cask install vagrant`
+  `brew install --cask vagrant`
   `vagrant plugin install vagrant-disksize`
 - Run
   `make vm`

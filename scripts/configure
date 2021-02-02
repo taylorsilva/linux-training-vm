@@ -4,6 +4,7 @@ set -ex
 timedatectl set-timezone "$TIME_ZONE"
 
 add-apt-repository ppa:longsleep/golang-backports
+add-apt-repository ppa:neovim-ppa/stable
 apt update
 
 apt install -y \
