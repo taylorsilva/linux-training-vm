@@ -5,6 +5,8 @@ timedatectl set-timezone "$TIME_ZONE"
 
 add-apt-repository ppa:longsleep/golang-backports
 add-apt-repository ppa:neovim-ppa/stable
+# for installing nodejs
+curl -sL https://deb.nodesource.com/setup_15.x | bash -
 apt update
 
 apt install -y \
@@ -24,10 +26,9 @@ apt install -y \
   libssl-dev \
   make \
   neovim \
-  python-neovim \
+  nodejs \
   python3-neovim \
   python-dev \
-  python-pip \
   python3-dev \
   python3-pip \
   silversearcher-ag \

@@ -11,13 +11,13 @@ if [[ ! -d ${HOME}/.dotfiles ]] ; then
   git clone --depth=1 https://github.com/Bash-it/bash-it.git "${HOME}/.bash_it"
   ~/.bash_it/install.sh --no-modify-config
 
+  mkdir -p "${HOME}/go"
+
   #Finish neovim setup
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
   nvim +PlugInstall +qa
-
-  mkdir -p "${HOME}/go"
 fi
 
 if [[ ! -d ${HOME}/tmuxfiles ]]; then
