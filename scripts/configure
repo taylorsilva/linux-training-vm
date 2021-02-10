@@ -9,9 +9,28 @@ add-apt-repository ppa:neovim-ppa/stable
 curl -sL https://deb.nodesource.com/setup_15.x | bash -
 apt update
 
+# Install Docker
+apt install -y \
+  apt-transport-https \
+  ca-certificates \
+  curl \
+  gnupg-agent \
+  software-properties-common
+# Add Docker GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# Add Docker repository
+add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+apt update
+
 apt install -y \
   bison \
   build-essential \
+  containerd.io \
+  docker-ce \
+  docker-ce-cli \
   flex \
   gcc \
   git \
@@ -37,7 +56,9 @@ apt install -y \
   util-linux \
   zsh
 
-pip3 --version
+# Enable vagrant user to use docker
+usermod -aG docker vagrant
+
 pip3 install neovim
 
 # Make GRUB pause during the boot, to give a chance to select custom boot configuration
