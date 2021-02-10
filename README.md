@@ -24,6 +24,7 @@ This project helps to create Linux VM for [System Programming for Linux Containe
   `make get-grub`
   Note: Once "VirtualBox" logo appears, click the gui and hold shift
   to get GRUB (VM capturing must be enabled).
+- You may want to change your shell to zsh `chsh -s /usr/bin/zsh`. Default password is `vagrant`
 
 ### Shared Folders
 

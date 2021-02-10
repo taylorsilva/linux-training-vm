@@ -34,7 +34,8 @@ apt install -y \
   silversearcher-ag \
   stow \
   tldr \
-  util-linux
+  util-linux \
+  zsh
 
 pip3 --version
 pip3 install neovim
