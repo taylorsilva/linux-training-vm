@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
                       privileged: false
                      )
   config.vm.synced_folder '~/workspace', '/home/vagrant/workspace', create: true
-  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 8080, host: 8081
 
   config.vm.provider "virtualbox" do |v|
         v.memory = 8192
