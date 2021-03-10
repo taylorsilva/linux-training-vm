@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-  config.disksize.size = '256GB'
+  config.vm.disk :disk, name: "main", size: '60GB'
   config.ssh.forward_agent = true
   config.vm.box = 'generic/ubuntu2004'
   config.vm.boot_timeout = 420
